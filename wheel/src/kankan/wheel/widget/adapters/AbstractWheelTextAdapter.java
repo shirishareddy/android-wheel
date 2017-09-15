@@ -180,7 +180,7 @@ public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
     protected abstract CharSequence getItemText(int index);
 
     @Override
-    public View getItem(int index, View convertView, ViewGroup parent) {
+    public View getItem(int index, View convertView, ViewGroup parent, boolean isCurrentItem) {
         if (index >= 0 && index < getItemsCount()) {
             if (convertView == null) {
                 convertView = getView(itemResourceId, parent);
@@ -195,6 +195,12 @@ public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
     
                 if (itemResourceId == TEXT_VIEW_ITEM_RESOURCE) {
                     configureTextView(textView);
+			
+			if(isCurrentItem){
+//Change properties
+			}else{
+				//Change properties
+			}
                 }
             }
             return convertView;
